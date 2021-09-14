@@ -143,6 +143,129 @@
   color: #f7941d;
 }
 
+.navbar .wishlist-cart .navigation {
+  background-color: transparent;
+  margin: 0 0.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navbar .wishlist-cart .nav-box {
+  height: 0.6rem;
+  width: 0.6rem;
+  border: 3px solid white;
+  border-radius: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar .wishlist-cart #nav-line-1,
+.navbar .wishlist-cart #nav-line-2 {
+  height: 2.3px;
+  width: 0.35rem;
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.navbar .wishlist-cart #nav-line-1::before,
+.navbar .wishlist-cart #nav-line-1::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0.35rem;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.navbar .wishlist-cart #nav-line-1::before {
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+}
+
+.navbar .wishlist-cart #nav-line-1::after {
+  -webkit-transform: translateY(8px);
+          transform: translateY(8px);
+}
+
+.navbar .wishlist-cart .nav-box:hover {
+  border-color: #f7941d;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.navbar .wishlist-cart .nav-box:hover #nav-line-1,
+.navbar .wishlist-cart .nav-box:hover #nav-line-2 {
+  background-color: #f7941d;
+}
+
+.navbar .wishlist-cart .nav-box:hover #nav-line-1::before,
+.navbar .wishlist-cart .nav-box:hover #nav-line-1::after {
+  background-color: #f7941d;
+}
+
+.navbar .wishlist-cart .nav-box.click #nav-line-1::after,
+.navbar .wishlist-cart .nav-box.click #nav-line-1::before {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.navbar .wishlist-cart .nav-box.close #nav-line-1::after {
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+  -webkit-transform: translateY(8px);
+          transform: translateY(8px);
+}
+
+.navbar .wishlist-cart .nav-box.close #nav-line-1::before {
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+}
+
+.navbar .wishlist-cart .nav-box.click #nav-line-1 {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+}
+
+.navbar .wishlist-cart .nav-box.click #nav-line-2 {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+  -webkit-transform: rotateZ(-45deg);
+          transform: rotateZ(-45deg);
+}
+
+.navbar .wishlist-cart .nav-box.close #nav-line-1 {
+  -webkit-transform: rotateZ(0deg);
+          transform: rotateZ(0deg);
+}
+
 .navbar .nav-search-down {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -290,7 +413,8 @@
 
 .categories-container .men .categories-popup h6,
 .categories-container .women .categories-popup h6 {
-  font-weight: 400;
+  font-size: 0.3rem;
+  font-weight: 500;
   line-height: 0.8rem;
   padding: 0 0.4rem;
   -webkit-transition: all 0.5s;
@@ -303,6 +427,24 @@
   color: white;
 }
 
+.hamburge-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: .5rem;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 @media screen and (max-width: 908px) {
   :root {
     font-size: 50px;
@@ -311,7 +453,7 @@
 
 @media screen and (max-width: 790px) {
   :root {
-    font-size: 40px;
+    font-size: 45px;
   }
 }
 
@@ -339,5 +481,8 @@
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
+  }
+  .categories-container {
+    visibility: hidden;
   }
 }
