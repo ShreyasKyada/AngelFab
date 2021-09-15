@@ -49,6 +49,7 @@
   min-height: 1.8rem;
   width: 100%;
   background-color: #333333;
+  position: relative;
 }
 
 .navbar .header-logo {
@@ -130,140 +131,22 @@
 }
 
 .navbar .wishlist-cart .heart,
-.navbar .wishlist-cart .bag {
+.navbar .wishlist-cart .bag, .navbar .wishlist-cart .bars {
   font-size: 0.5rem;
   color: white;
   padding: 0 0.3rem;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+  position: relative;
+}
+
+.navbar .wishlist-cart .bars {
+  color: #f7941d;
 }
 
 .navbar .wishlist-cart .bag:hover,
 .navbar .wishlist-cart .heart:hover {
   color: #f7941d;
-}
-
-.navbar .wishlist-cart .navigation {
-  background-color: transparent;
-  margin: 0 0.3rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.navbar .wishlist-cart .nav-box {
-  height: 0.6rem;
-  width: 0.6rem;
-  border: 3px solid white;
-  border-radius: 10%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  cursor: pointer;
-}
-
-.navbar .wishlist-cart #nav-line-1,
-.navbar .wishlist-cart #nav-line-2 {
-  height: 2.3px;
-  width: 0.35rem;
-  background-color: white;
-  border-radius: 5px;
-  position: absolute;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.navbar .wishlist-cart #nav-line-1::before,
-.navbar .wishlist-cart #nav-line-1::after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 0.35rem;
-  background-color: white;
-  border-radius: 5px;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.navbar .wishlist-cart #nav-line-1::before {
-  -webkit-transform: translateY(-8px);
-          transform: translateY(-8px);
-}
-
-.navbar .wishlist-cart #nav-line-1::after {
-  -webkit-transform: translateY(8px);
-          transform: translateY(8px);
-}
-
-.navbar .wishlist-cart .nav-box:hover {
-  border-color: #f7941d;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.navbar .wishlist-cart .nav-box:hover #nav-line-1,
-.navbar .wishlist-cart .nav-box:hover #nav-line-2 {
-  background-color: #f7941d;
-}
-
-.navbar .wishlist-cart .nav-box:hover #nav-line-1::before,
-.navbar .wishlist-cart .nav-box:hover #nav-line-1::after {
-  background-color: #f7941d;
-}
-
-.navbar .wishlist-cart .nav-box.click #nav-line-1::after,
-.navbar .wishlist-cart .nav-box.click #nav-line-1::before {
-  -webkit-transform: translateY(0px);
-          transform: translateY(0px);
-}
-
-.navbar .wishlist-cart .nav-box.close #nav-line-1::after {
-  -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
-  -webkit-transform: translateY(8px);
-          transform: translateY(8px);
-}
-
-.navbar .wishlist-cart .nav-box.close #nav-line-1::before {
-  -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
-  -webkit-transform: translateY(-8px);
-          transform: translateY(-8px);
-}
-
-.navbar .wishlist-cart .nav-box.click #nav-line-1 {
-  -webkit-transition-delay: 0.4s;
-          transition-delay: 0.4s;
-  -webkit-transform: rotateZ(45deg);
-          transform: rotateZ(45deg);
-}
-
-.navbar .wishlist-cart .nav-box.click #nav-line-2 {
-  -webkit-transition-delay: 0.4s;
-          transition-delay: 0.4s;
-  -webkit-transform: rotateZ(-45deg);
-          transform: rotateZ(-45deg);
-}
-
-.navbar .wishlist-cart .nav-box.close #nav-line-1 {
-  -webkit-transform: rotateZ(0deg);
-          transform: rotateZ(0deg);
 }
 
 .navbar .nav-search-down {
@@ -318,6 +201,74 @@
   position: absolute;
   font-size: 0.4rem;
   right: 0.2rem;
+}
+
+.navbar .hamburge {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: .4rem;
+  width: 100vw;
+  height: auto;
+  z-index: 100;
+  top: 1.2rem;
+  left: 0;
+  position: absolute;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: .5rem;
+}
+
+.navbar .hamburge .hamburge-list {
+  width: 100%;
+  margin: .1rem;
+  cursor: pointer;
+}
+
+.navbar .hamburge .hamburge-list-container {
+  width: 100%;
+  margin: .1rem;
+  cursor: pointer;
+}
+
+.navbar .hamburge .hamburge-list-container .categories-popup {
+  height: 0;
+  display: none;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.navbar .hamburge .men.open .categories-popup, .navbar .hamburge .women.open .categories-popup {
+  display: block;
+  width: 100%;
+  height: 3.5rem;
+  padding: 0.2rem;
+}
+
+.navbar .hamburge .men.open .categories-popup h6, .navbar .hamburge .women.open .categories-popup h6 {
+  font-size: 0.3rem;
+  font-weight: 700;
+  line-height: 0.8rem;
+  padding: 0 0.4rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.navbar .hamburge .men.open .categories-popup h6:hover, .navbar .hamburge .women.open .categories-popup h6:hover {
+  color: #f7941d;
 }
 
 .categories-container {
@@ -425,24 +376,6 @@
 .categories-container .women .categories-popup h6:hover {
   background-color: #f7941d;
   color: white;
-}
-
-.hamburge-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: .5rem;
-  width: 100%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 @media screen and (max-width: 908px) {
