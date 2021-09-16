@@ -125,7 +125,6 @@ $logoColor: #f7941d;
 }
 .hamburge {
     @include displayFlex;
-    display: none;
     transition: height 1s;
     font-size: 0.4rem;
     width: 100vw;
@@ -170,7 +169,7 @@ $logoColor: #f7941d;
 .hamburge-categories-popup {
     font-size: .5rem;
     font-weight: 200;
-    display: none;
+    // display: none;
     width: 100%;
     height: 0;
 }
@@ -192,6 +191,7 @@ $logoColor: #f7941d;
     display: inline-block;
     margin: 0.1rem;
 }
+
 .categories-container {
     @include displayFlex;
     font-size: 0.35rem;
