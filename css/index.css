@@ -131,7 +131,8 @@
 }
 
 .navbar .wishlist-cart .heart,
-.navbar .wishlist-cart .bag, .navbar .wishlist-cart .bars {
+.navbar .wishlist-cart .bag,
+.navbar .wishlist-cart .bars {
   font-size: 0.5rem;
   color: white;
   padding: 0 0.3rem;
@@ -141,6 +142,7 @@
 }
 
 .navbar .wishlist-cart .bars {
+  display: none;
   color: #f7941d;
 }
 
@@ -203,7 +205,7 @@
   right: 0.2rem;
 }
 
-.navbar .hamburge {
+.hamburge {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -213,9 +215,12 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: .4rem;
+  display: none;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+  font-size: 0.4rem;
   width: 100vw;
-  height: auto;
+  height: 0rem;
   z-index: 100;
   top: 1.2rem;
   left: 0;
@@ -225,50 +230,73 @@
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #fff;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  padding: .5rem;
 }
 
-.navbar .hamburge .hamburge-list {
+.hamburge-list,
+.hamburge-list-container.men,
+.hamburge-list-container.women {
   width: 100%;
-  margin: .1rem;
+  margin: 0.1rem;
+  padding: 0 0.5rem;
   cursor: pointer;
+  -webkit-transition: display 1s;
+  transition: display 1s;
 }
 
-.navbar .hamburge .hamburge-list-container {
-  width: 100%;
-  margin: .1rem;
-  cursor: pointer;
-}
-
-.navbar .hamburge .hamburge-list-container .categories-popup {
+.hamburge-list-container.men,
+.hamburge-list-container.women,
+.hamburge-list {
+  overflow: hidden;
   height: 0;
-  display: none;
-  -webkit-transition: all 1s;
-  transition: all 1s;
 }
 
-.navbar .hamburge .men.open .categories-popup, .navbar .hamburge .women.open .categories-popup {
-  display: block;
-  width: 100%;
-  height: 3.5rem;
-  padding: 0.2rem;
+.hamburge-list-container.men.open,
+.hamburge-list-container.women.open,
+.hamburge-list.open {
+  height: auto;
 }
 
-.navbar .hamburge .men.open .categories-popup h6, .navbar .hamburge .women.open .categories-popup h6 {
-  font-size: 0.3rem;
-  font-weight: 700;
-  line-height: 0.8rem;
-  padding: 0 0.4rem;
+.hamburge-list,
+.hamburge-list-container p {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 
-.navbar .hamburge .men.open .categories-popup h6:hover, .navbar .hamburge .women.open .categories-popup h6:hover {
+.hamburge-list:hover,
+.hamburge-list-container p:hover {
   color: #f7941d;
+}
+
+.hamburge-categories-popup {
+  font-size: .5rem;
+  font-weight: 200;
+  display: none;
+  width: 100%;
+  height: 0;
+}
+
+.hamburge-categories-popup h6 {
+  height: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.hamburge-categories-popup h6:hover {
+  color: #f7941d;
+}
+
+.hamburge.open {
+  height: 205px;
+}
+
+.hamburge-categories-popup.open h6 {
+  height: 0.6rem;
+  margin: 0 0.5rem;
+}
+
+.hamburge-categories-popup.open {
+  display: inline-block;
+  margin: 0.1rem;
 }
 
 .categories-container {
@@ -398,6 +426,9 @@
 }
 
 @media screen and (max-width: 463px) {
+  .wishlist-cart .bars {
+    display: block !important;
+  }
   .navbar {
     padding: 0 0.3rem;
     -ms-flex-wrap: wrap;
